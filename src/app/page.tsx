@@ -1,10 +1,41 @@
-import Image from "next/image";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+
+// Section imports (to be implemented)
+import Hero from "@/components/sections/Hero";
+import WhyResilience from "@/components/sections/WhyResilience";
+import About from "@/components/sections/About";
+import WhoShouldJoin from "@/components/sections/WhoShouldJoin";
+import WhatLookingFor from "@/components/sections/WhatLookingFor";
+import Challenges from "@/components/sections/Challenges";
+import HowItWorks from "@/components/sections/HowItWorks";
+import Timeline from "@/components/sections/Timeline";
+import AfterHackathon from "@/components/sections/AfterHackathon";
+import GetInvolved from "@/components/sections/GetInvolved";
+import Partners from "@/components/sections/Partners";
+import CodeOfConduct from "@/components/sections/CodeOfConduct";
+import FAQ from "@/components/sections/FAQ";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-light text-dark flex items-center justify-center">
-      <h1 className="font-title text-6xl text-primary">Hello Hackathon</h1>
-      <p className="font-body text-lg mt-4">Poppins body font test</p>
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <WhyResilience />
+        <About />
+        <WhoShouldJoin />
+        <WhatLookingFor />
+        <Challenges />
+        <HowItWorks />
+        <Timeline />
+        <AfterHackathon />
+        <GetInvolved />
+        <Partners />
+        <CodeOfConduct />
+        <FAQ />
+      </main>
+      <Footer />
+    </>
   );
 }
