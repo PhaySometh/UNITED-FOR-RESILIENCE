@@ -79,7 +79,7 @@ export default function CodeOfConduct() {
                         <li><strong>Respect & Dignity:</strong> Treat all with respect.</li>
                         <li><strong>Human-Centered:</strong> Prioritize safety and dignity.</li>
                         <li><strong>Collaboration:</strong> Share knowledge openly.</li>
-                        <li><strong>Do No Harm:</strong> Ensure actions don't put people at risk.</li>
+                        <li><strong>Do No Harm:</strong> Ensure actions don&apos;t put people at risk.</li>
                         <li><strong>Integrity:</strong> Act honestly and responsibly.</li>
                       </ul>
                     </section>
@@ -90,7 +90,7 @@ export default function CodeOfConduct() {
                         <li>Communicate respectfully and listen actively.</li>
                         <li>Be mindful of trauma and sensitivities.</li>
                         <li>Use inclusive, non-violent language.</li>
-                        <li>Credit others’ ideas and collaborate in good faith.</li>
+                        <li>Credit others&rsquo; ideas and collaborate in good faith.</li>
                       </ul>
                     </section>
 

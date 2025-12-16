@@ -1,34 +1,35 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaUsers, FaLightbulb, FaHeart } from "react-icons/fa";
+import React from "react";
 
+
+// Define CardProps interface for type safety
+interface CardProps {
+  icon: React.ReactNode;
+  title: string;
+  children: React.ReactNode;
+}
+
+const Card = ({ icon, title, children }: CardProps) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    className="bg-neutral-dark/80 container-corner-cut shadow-lg p-6 flex flex-col items-center text-center border border-primary-yellow/20"
+  >
+    <div className="p-4 bg-gradient-to-br from-primary-orange to-primary-yellow btn-corner-cut mb-4">
+      {icon}
+    </div>
+    <h3 className="font-title text-2xl font-bold text-primary-yellow mb-2">
+      {title}
+    </h3>
+    <p className="font-body text-neutral-light/90">{children}</p>
+  </motion.div>
+);
 
 export default function About() {
-  const Card = ({
-    icon,
-    title,
-    children,
-  }: {
-    icon: React.ReactNode;
-    title: string;
-    children: React.ReactNode;
-  }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="bg-neutral-dark/80 container-corner-cut shadow-lg p-6 flex flex-col items-center text-center border border-primary-yellow/20"
-    >
-      <div className="p-4 bg-gradient-to-br from-primary-orange to-primary-yellow btn-corner-cut mb-4">
-        {icon}
-      </div>
-      <h3 className="font-title text-2xl font-bold text-primary-yellow mb-2">
-        {title}
-      </h3>
-      <p className="font-body text-neutral-light/90">{children}</p>
-    </motion.div>
-  );
 
   return (
     <section

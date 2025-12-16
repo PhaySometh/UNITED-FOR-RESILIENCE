@@ -65,7 +65,7 @@ export default function GetInvolved() {
           className="text-lg md:text-xl text-neutral-dark/80 mb-12 max-w-2xl mx-auto"
         >
           There are many ways to participate and support our mission. Find the
-          one that's right for you.
+          one that&apos;s right for you.
         </motion.p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {involvementOptions.map((option, index) => (
