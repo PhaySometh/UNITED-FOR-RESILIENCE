@@ -4,7 +4,15 @@ import { FaUsers, FaLightbulb, FaHeart } from "react-icons/fa";
 
 
 export default function About() {
-  const Card = ({ icon, title, children }) => (
+  const Card = ({
+    icon,
+    title,
+    children,
+  }: {
+    icon: React.ReactNode;
+    title: string;
+    children: React.ReactNode;
+  }) => (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
