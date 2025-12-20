@@ -17,9 +17,9 @@ export default function HowItWorks() {
     },
     {
       icon: <FaChalkboardTeacher size={32} className="text-neutral-dark" />,
-      title: "Mentor Validation",
+      title: "NGO Insights",
       description:
-        "Continuous feedback and validation from mentors at each stage of the process.",
+        "Validation and insights from NGO practitioners to ensure real-world applicability.",
     },
     {
       icon: <FaLaptopCode size={32} className="text-neutral-dark" />,

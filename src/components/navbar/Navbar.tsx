@@ -65,8 +65,8 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-            ? "bg-neutral-dark/95 backdrop-blur-md shadow-lg"
-            : "bg-neutral-dark/80 backdrop-blur-sm"
+          ? "bg-neutral-dark/95 backdrop-blur-md shadow-lg"
+          : "bg-neutral-dark/80 backdrop-blur-sm"
           } border-b border-primary-yellow/20`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
@@ -102,13 +102,13 @@ export default function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-yellow to-primary-orange transition-all duration-300 ease-out group-hover:w-full" />
               </a>
             ))}
-            {/* Apply Button with corner cut */}
+            {/* View Projects Button with corner cut */}
             <a
-              href="#get-involved"
-              onClick={(e) => handleSmoothScroll(e, "#get-involved")}
+              href="#solutions"
+              onClick={(e) => handleSmoothScroll(e, "#solutions")}
               className="ml-2 px-5 py-2 bg-gradient-to-r from-primary-orange to-primary-yellow text-neutral-dark font-bold btn-corner-cut shadow-lg hover:shadow-xl hover:brightness-110 transform transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-neutral-dark"
             >
-              Apply
+              View Projects
             </a>
           </div>
 
@@ -172,16 +172,16 @@ export default function Navbar() {
                   </motion.a>
                 ))}
 
-                {/* Apply Button with corner cut */}
+                {/* View Projects Button with corner cut */}
                 <motion.a
-                  href="#get-involved"
-                  onClick={(e) => handleSmoothScroll(e, "#get-involved")}
+                  href="#solutions"
+                  onClick={(e) => handleSmoothScroll(e, "#solutions")}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: NAV_ITEMS.length * 0.05 }}
                   className="mt-6 px-6 py-3 bg-gradient-to-r from-primary-orange to-primary-yellow text-neutral-dark font-bold btn-corner-cut shadow-lg hover:brightness-110 transition-all duration-300 text-center"
                 >
-                  Apply
+                  View Projects
                 </motion.a>
               </nav>
             </motion.div>

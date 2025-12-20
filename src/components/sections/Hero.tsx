@@ -164,7 +164,7 @@ export default function Hero() {
           UNITED FOR RESILIENCE HACKATHON
         </h1>
         <p className="font-body text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-neutral-light/90">
-          A 2.5-day human-centered hackathon that brings together technologists,
+          A 2-day human-centered hackathon that brings together technologists,
           designers, educators, community members, and humanitarian actors to
           co-create practical solutions that support people and communities
           affected by conflict and displacement in Cambodia.

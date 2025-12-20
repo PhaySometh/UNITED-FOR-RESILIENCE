@@ -36,7 +36,6 @@ export default function AfterHackathon() {
               Selected Projects Receive:
             </h3>
             <ul className="list-disc pl-5 space-y-2 text-neutral-light/80 font-body">
-              <li>Continued mentoring</li>
               <li>Support for pilot design</li>
               <li>Connections to NGOs, funders, or implementers</li>
               <li>Opportunities for refinement and scaling</li>

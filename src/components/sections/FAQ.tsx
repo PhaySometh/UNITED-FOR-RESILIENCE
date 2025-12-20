@@ -47,32 +47,32 @@ export default function FAQ() {
     {
       question: "When does the hackathon take place?",
       answer:
-        "This weekend from 19th - 21st December. Kick-off Friday at 1pm, ends Sunday at 6:00 p.m. You have 48 hours to build.",
+        "This weekend on December 20-21. The event starts Saturday at 8:30 am and ends Sunday at approximately 5:30 pm.",
     },
     {
       question: "Do we get support during the hackathon?",
       answer:
-        "Yes! Mentors (professionals) are at your side for feedback and knowledge check-ins throughout the 48 hours.",
+        "Yes! NGO practitioners and challenge holders will be available for validation and insights throughout the event.",
     },
     {
-      question: "How does a virtual hackathon work?",
+      question: "Where does the hackathon take place?",
       answer:
-        "It happens online. We provide tools for joint development, Telegram for communication, and video conferencing for sessions.",
+        "The hackathon takes place in-person at CADT (Cambodia Academy of Digital Technology) in Phnom Penh.",
     },
     {
-      question: "How many can participate?",
+      question: "How are participants selected?",
       answer:
-        "No limit! Simply register by midnight on Thursday.",
+        "This hackathon is by direct invitation. We've brought together a curated group of technologists, designers, and humanitarian workers.",
     },
     {
       question: "Are there prerequisites for participation?",
       answer:
-        "No. We look for programmers, designers, creatives, problem solvers, and socially committed citizens. Just be motivated and have time/internet.",
+        "No. We look for programmers, designers, creatives, problem solvers, and socially committed citizens. Just be motivated and ready to collaborate.",
     },
     {
       question: "Do I have to be able to code?",
       answer:
-        "No! Everyone motivated is welcome.",
+        "No! Everyone motivated is welcome. We need diverse skills including design, communication, and domain expertise.",
     },
     {
       question: "What can be submitted as a result?",
@@ -82,7 +82,7 @@ export default function FAQ() {
     {
       question: "What happens to the results afterwards?",
       answer:
-        "The aim is for results to be used. We are setting up a support program and sourcing partners/funding for the best ideas.",
+        "The aim is for results to be used. We are setting up support and sourcing partners/funding for the best ideas.",
     },
     {
       question: "Do I have to speak English/Khmer?",
@@ -90,14 +90,9 @@ export default function FAQ() {
         "Materials are in both languages. You can submit in either English or Khmer.",
     },
     {
-      question: "Can I register as a team?",
-      answer:
-        "Yes! Coordinate with friends, register separately, and then group up on a challenge.",
-    },
-    {
       question: "What do I get for participating?",
       answer:
-        "You help others, potentially build solutions for humanitarian efforts, and access post-hackathon support.",
+        "You help others, potentially build solutions for humanitarian efforts, and access post-hackathon support for promising projects.",
     },
     {
       question: "Can I submit a project that's already working?",

@@ -1,40 +1,32 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaCode, FaHandshake, FaBullhorn } from "react-icons/fa";
+import { useState } from "react";
 
 export default function GetInvolved() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   const involvementOptions = [
     {
       icon: <FaBullhorn size={32} className="text-neutral-dark" />,
       title: "Submit a Problem",
       description:
         "Submit a problem your community has experienced or an idea that could help. You don't have to participate to share.",
-      buttonText: "Submit Idea",
-      href: "https://docs.google.com/forms/d/e/1FAIpQLSeJtf7TjbugBYfjayx0xeySPO1vqyr00GrcF1o-mPux0yjEPw/viewform",
+      buttonText: "Coming Soon",
     },
     {
       icon: <FaCode size={32} className="text-neutral-dark" />,
       title: "Hack with Us",
       description:
-        "Apply to join, form a team, and prototype solutions in 48 hours. Developers, Creatives, Humanitarians welcome.",
-      buttonText: "Apply to Hack",
-      href: "https://docs.google.com/forms/d/e/1FAIpQLSdjUnk2hCC7tatWrTVwyV0n1CkH1BBXGqcd88ktvws6AeWvRA/viewform",
-    },
-    {
-      icon: <FaHandshake size={32} className="text-neutral-dark" />,
-      title: "Become a Mentor",
-      description:
-        "Offer guidance and advice to teams to help them operationalize their solutions.",
-      buttonText: "Join as Mentor",
-      href: "https://docs.google.com/forms/d/e/1FAIpQLSe_VLES3ht1cfzY_kKA8aTSIXTV8HhzLVciY5oKgI43xiWVLw/viewform",
+        "Join us, form a team, and prototype solutions together. Developers, Creatives, Humanitarians welcome.",
+      buttonText: "Coming Soon",
     },
     {
       icon: <FaHandshake size={32} className="text-neutral-dark" />,
       title: "Support a Project",
       description:
         "Offer sponsorship, funding, or staff time to develop solutions further through your NGO or company.",
-      buttonText: "Support Us",
-      href: "https://docs.google.com/forms/d/e/1FAIpQLSfTEERuHPSgQ_CvRdwuqBFaiimlI97wrM76xXZowfwkiU5s1g/viewform",
+      buttonText: "Coming Soon",
     },
   ];
 
@@ -67,7 +59,7 @@ export default function GetInvolved() {
           There are many ways to participate and support our mission. Find the
           one that&apos;s right for you.
         </motion.p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {involvementOptions.map((option, index) => (
             <motion.div
               key={index}
@@ -86,12 +78,29 @@ export default function GetInvolved() {
               <p className="font-body text-neutral-dark/80 mb-6 flex-grow">
                 {option.description}
               </p>
-              <a
-                href={option.href}
-                className="mt-auto px-6 py-3 bg-gradient-to-r from-primary-orange to-primary-yellow text-neutral-dark font-bold btn-corner-cut shadow-lg hover:brightness-110 hover:shadow-xl transform transition-transform duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2"
+              <div
+                className="relative mt-auto"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
-                {option.buttonText}
-              </a>
+                <button
+                  disabled
+                  className="w-full px-6 py-3 bg-gradient-to-r from-neutral-dark/20 to-neutral-dark/30 text-neutral-dark/60 font-bold btn-corner-cut shadow-md cursor-not-allowed transition-all duration-300"
+                >
+                  {option.buttonText}
+                </button>
+                {hoveredIndex === index && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-2 bg-neutral-dark text-neutral-light text-sm rounded-lg whitespace-nowrap shadow-lg z-10"
+                  >
+                    Coming Soon!
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-neutral-dark"></div>
+                  </motion.div>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>

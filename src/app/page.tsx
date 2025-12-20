@@ -11,6 +11,7 @@ import Challenges from "@/components/sections/Challenges";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Timeline from "@/components/sections/Timeline";
 import AfterHackathon from "@/components/sections/AfterHackathon";
+import Solutions from "@/components/sections/Solutions";
 import GetInvolved from "@/components/sections/GetInvolved";
 import Partners from "@/components/sections/Partners";
 import CodeOfConduct from "@/components/sections/CodeOfConduct";
@@ -30,6 +31,7 @@ export default function Home() {
         <HowItWorks />
         <Timeline />
         <AfterHackathon />
+        <Solutions />
         <GetInvolved />
         <Partners />
         <CodeOfConduct />

@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 export default function Partners() {
   const initiatedBy = [
     { name: "CADT", logo: "/cadt.png", width: "w-48 md:w-56" },
+    { name: "FirstWave", logo: "/firstwave.png", width: "w-32 md:w-40" },
     { name: "Impact Hub Phnom Penh", logo: "/impact_hub.png", width: "w-32 md:w-40" },
-    { name: "Phum Impact", logo: "/phum_impact.png", width: "w-32 md:w-40" },
   ];
 
   const supportedBy = [
-    { name: "Ministry of Post and Telecommunication", logo: "/mptc.png", width: "w-64 md:w-80" },
+    { name: "Ministry of Post and Telecommunication", logo: "/mptc.png", width: "w-80 md:w-96" },
   ];
 
   return (

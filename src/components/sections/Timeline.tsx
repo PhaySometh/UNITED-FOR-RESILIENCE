@@ -1,37 +1,56 @@
 "use client";
 import { motion } from "framer-motion";
 import {
-  FaRegCalendarAlt,
   FaLaptopCode,
-  FaFileUpload,
   FaTrophy,
+  FaUsers,
+  FaLightbulb,
+  FaComments,
+  FaCoffee,
 } from "react-icons/fa";
 
+interface AgendaItem {
+  time: string;
+  title: string;
+  icon?: React.ReactNode;
+}
+
+interface DaySchedule {
+  day: string;
+  subtitle: string;
+  location: string;
+  items: AgendaItem[];
+}
+
 export default function Timeline() {
-  const events = [
+  const schedule: DaySchedule[] = [
     {
-      title: "Fri Dec 19 (Afternoon)",
-      date: "Opening & Team Formation",
-      details:
-        "Opening session, Context briefing, Team formation, Problem framing, Mentor validation.",
-      icon: <FaRegCalendarAlt size={20} className="text-neutral-dark" />,
-      align: "right",
+      day: "Saturday",
+      subtitle: "Align, Form Teams & Start Building",
+      location: "@ CADT",
+      items: [
+        { time: "8:30–9:00 am", title: "Welcome, purpose & agenda", icon: <FaUsers size={16} /> },
+        { time: "9:00–9:20 am", title: "Who's in the room: skills mapping between everyone", icon: <FaUsers size={16} /> },
+        { time: "9:20–9:40 am", title: "Field Stories from the ground", icon: <FaComments size={16} /> },
+        { time: "9:40–9:55 am", title: "Challenge sharing from NGOs / actors on the ground", icon: <FaLightbulb size={16} /> },
+        { time: "9:55–10:30 am", title: "Break-Out Deep-dive Q&A with challenge holders", icon: <FaComments size={16} /> },
+        { time: "10:30–11:00 am", title: "Idea sharing & team formation", icon: <FaUsers size={16} /> },
+        { time: "11:00 am–2:00 pm", title: "Hacking - Build-up of ideas", icon: <FaLaptopCode size={16} /> },
+        { time: "2:00–3:00 pm", title: "Validation & insights from NGO practitioners", icon: <FaLightbulb size={16} /> },
+        { time: "3:00–4:00 pm", title: "Peer-to-peer feedback", icon: <FaComments size={16} /> },
+        { time: "Evening", title: "Continue refining solutions", icon: <FaLaptopCode size={16} /> },
+      ],
     },
     {
-      title: "Saturday Dec 20",
-      date: "Design & Build",
-      details:
-        "Morning: Understanding & Validation. Afternoon/Evening: Build mode & Mentor support.",
-      icon: <FaLaptopCode size={20} className="text-neutral-dark" />,
-      align: "left",
-    },
-    {
-      title: "Sunday Dec 21",
-      date: "Showcase & Closing",
-      details:
-        "Morning: Testing. Afternoon: Stakeholder Walkthrough & Closing. 12pm Mon: Top ideas announcement.",
-      icon: <FaTrophy size={20} className="text-neutral-dark" />,
-      align: "right",
+      day: "Sunday",
+      subtitle: "Refine, Share & Handover",
+      location: "@ CADT",
+      items: [
+        { time: "Morning", title: "Final refinement - Strengthen prototype, clarify value, users, and implementation needs", icon: <FaLaptopCode size={16} /> },
+        { time: "4:00–5:00 pm", title: "Solution Showcase - Short demos (≈3 min per project) - NGO invited", icon: <FaTrophy size={16} /> },
+        { time: "After demos", title: "Give & Connect - Offers, referrals, connections", icon: <FaUsers size={16} /> },
+        { time: "~5:30 pm", title: "End of event", icon: <FaCoffee size={16} /> },
+      ],
     },
   ];
 
@@ -48,84 +67,72 @@ export default function Timeline() {
           initial={{ y: 30 }}
           whileInView={{ y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-16"
+          className="text-4xl font-bold text-center mb-6"
           style={{ fontFamily: "var(--font-title)" }}
         >
-          Event <span className="text-primary-yellow">Timeline</span>
+          Event <span className="text-primary-yellow">Agenda</span>
         </motion.h2>
-        <motion.div
+        <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="relative"
+          className="text-center text-neutral-light/70 mb-12 text-lg"
         >
-          {/* Central Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary-orange to-primary-yellow h-full hidden md:block rounded-full"></div>
+          December 20-21, 2024 at CADT
+        </motion.p>
 
-          <div className="space-y-12">
-            {events.map((event, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.02 }}
-                className="flex items-center md:justify-between flex-col md:flex-row gap-4 md:gap-0"
-              >
-                {/* Left Content */}
-                <div className="md:w-5/12 md:text-right md:pr-12 w-full text-center">
-                  {event.align === "right" && (
-                    <div>
-                      <h3
-                        className="text-2xl font-semibold mb-2 text-primary-yellow"
-                        style={{ fontFamily: "var(--font-title)" }}
-                      >
-                        {event.title}
-                      </h3>
-                      <p
-                        className="text-neutral-light/80 text-lg font-bold"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        {event.date}
-                      </p>
-                      <p className="text-neutral-light/60 text-sm mt-2">
-                        {event.details}
-                      </p>
+        <div className="grid md:grid-cols-2 gap-8">
+          {schedule.map((daySchedule, dayIndex) => (
+            <motion.div
+              key={dayIndex}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: dayIndex * 0.2 }}
+              className="bg-white/5 backdrop-blur-sm container-corner-cut p-6 border border-white/10"
+            >
+              {/* Day Header */}
+              <div className="mb-6 text-center">
+                <h3
+                  className="text-2xl md:text-3xl font-bold text-primary-yellow mb-2"
+                  style={{ fontFamily: "var(--font-title)" }}
+                >
+                  {daySchedule.day}
+                </h3>
+                <p className="text-lg text-neutral-light/90 font-semibold">
+                  {daySchedule.subtitle}
+                </p>
+                <p className="text-sm text-neutral-light/60">{daySchedule.location}</p>
+              </div>
+
+              {/* Agenda Items */}
+              <div className="space-y-3">
+                {daySchedule.items.map((item, itemIndex) => (
+                  <motion.div
+                    key={itemIndex}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: itemIndex * 0.05 }}
+                    className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
+                  >
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-primary-orange to-primary-yellow rounded flex items-center justify-center text-neutral-dark">
+                      {item.icon}
                     </div>
-                  )}
-                </div>
-
-                {/* Center Icon/Marker */}
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-orange to-primary-yellow flex items-center justify-center transform hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(255,213,70,0.5)]">
-                    {/* Square marker (no rounded corners) */}
-                    {event.icon}
-                  </div>
-                </div>
-
-                {/* Right Content */}
-                <div className="md:w-5/12 md:pl-12 w-full text-center md:text-left">
-                  {event.align === "left" && (
-                    <div>
-                      <h3
-                        className="text-2xl font-semibold mb-2 text-primary-yellow"
-                        style={{ fontFamily: "var(--font-title)" }}
-                      >
-                        {event.title}
-                      </h3>
-                      <p
-                        className="text-neutral-light/80 text-lg font-bold"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        {event.date}
-                      </p>
-                      <p className="text-neutral-light/60 text-sm mt-2">
-                        {event.details}
-                      </p>
+                    <div className="flex-grow">
+                      <span className="text-sm text-primary-yellow font-semibold block">
+                        {item.time}
+                      </span>
+                      <span className="text-neutral-light/90 text-sm">
+                        {item.title}
+                      </span>
                     </div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </motion.section>
   );
