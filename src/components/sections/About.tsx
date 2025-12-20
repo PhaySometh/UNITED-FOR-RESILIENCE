@@ -19,7 +19,7 @@ const Card = ({ icon, title, children }: CardProps) => (
     transition={{ duration: 0.5 }}
     className="bg-neutral-dark/80 container-corner-cut shadow-lg p-6 flex flex-col items-center text-center border border-primary-yellow/20"
   >
-    <div className="p-4 bg-gradient-to-br from-primary-orange to-primary-yellow btn-corner-cut mb-4">
+    <div className="p-4 bg-linear-to-br from-primary-orange to-primary-yellow btn-corner-cut mb-4">
       {icon}
     </div>
     <h3 className="font-title text-2xl font-bold text-primary-yellow mb-2">
