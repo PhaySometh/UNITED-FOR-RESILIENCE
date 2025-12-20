@@ -2,8 +2,14 @@
 import { motion } from "framer-motion";
 import { FaShieldAlt, FaHandHoldingHeart, FaUsers } from "react-icons/fa";
 
+interface Challenge {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
 export default function Challenges() {
-  const challengeData = [
+  const challengeData: Challenge[] = [
     {
       icon: <FaShieldAlt size={24} className="text-neutral-dark" />,
       title: "Emergency Information & Communication",
@@ -90,7 +96,7 @@ export default function Challenges() {
           </span>
         </motion.h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {challengeData.map((challenge, index) => (
+          {challengeData.map((challenge: Challenge, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}

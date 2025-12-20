@@ -171,11 +171,11 @@ export default function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href="#get-involved"
-            onClick={(e) => handleSmoothScroll(e, "#get-involved")}
+            href="#solutions"
+            onClick={(e) => handleSmoothScroll(e, "#solutions")}
             className="px-8 py-3.5 bg-gradient-to-r from-primary-orange to-primary-yellow text-neutral-dark font-bold btn-corner-cut shadow-lg hover:brightness-110 hover:shadow-xl transform transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-neutral-dark"
           >
-            Get Involved
+            View Project
           </a>
           <a
             href="#why-resilience"

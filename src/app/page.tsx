@@ -23,6 +23,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Solutions />
         <WhyResilience />
         <About />
         <WhoShouldJoin />
@@ -31,7 +32,6 @@ export default function Home() {
         <HowItWorks />
         <Timeline />
         <AfterHackathon />
-        <Solutions />
         <GetInvolved />
         <Partners />
         <CodeOfConduct />

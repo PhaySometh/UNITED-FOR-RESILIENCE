@@ -46,7 +46,7 @@ export default function Partners() {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="flex flex-wrap justify-center gap-12 md:gap-20 items-center"
           >
-            {initiatedBy.map((partner, index) => (
+            {initiatedBy.map((partner: { name: string; logo: string; width: string }, index: number) => (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.1 }}
@@ -78,7 +78,7 @@ export default function Partners() {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="flex justify-center items-center"
           >
-            {supportedBy.map((partner, index) => (
+            {supportedBy.map((partner: { name: string; logo: string; width: string }, index: number) => (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.1 }}

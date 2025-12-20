@@ -82,7 +82,7 @@ export default function Timeline() {
         </motion.p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {schedule.map((daySchedule, dayIndex) => (
+          {schedule.map((daySchedule: DaySchedule, dayIndex: number) => (
             <motion.div
               key={dayIndex}
               initial={{ opacity: 0, y: 30 }}
@@ -107,7 +107,7 @@ export default function Timeline() {
 
               {/* Agenda Items */}
               <div className="space-y-3">
-                {daySchedule.items.map((item, itemIndex) => (
+                {daySchedule.items.map((item: AgendaItem, itemIndex: number) => (
                   <motion.div
                     key={itemIndex}
                     initial={{ opacity: 0, x: -20 }}
