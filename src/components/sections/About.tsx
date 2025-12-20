@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { FaUsers, FaLightbulb, FaHeart } from "react-icons/fa";
 import React from "react";
 
-
 // Define CardProps interface for type safety
 interface CardProps {
   icon: React.ReactNode;
@@ -30,7 +29,6 @@ const Card = ({ icon, title, children }: CardProps) => (
 );
 
 export default function About() {
-
   return (
     <section
       className="relative w-full bg-neutral-dark text-neutral-light px-4 py-20 md:py-28"
@@ -53,10 +51,10 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="font-body text-lg md:text-xl max-w-3xl mx-auto mb-16 text-neutral-light/80"
         >
-          At a time when hundreds and thousands of people are being displaced, and
-          host communities and frontline responders are under increasing strain,
-          this hackathon creates a space to listen, build responsibly, and act
-          together. Over one weekend, participants will work in
+          At a time when hundreds and thousands of people are being displaced,
+          and host communities and frontline responders are under increasing
+          strain, this hackathon creates a space to listen, build responsibly,
+          and act together. Over one weekend, participants will work in
           interdisciplinary teams to design and develop working, testable
           prototypes that could help support the emergency response of the aid
           across the country.
@@ -96,9 +94,6 @@ export default function About() {
           </Card>
         </div>
       </div>
-
-
-    </section >
+    </section>
   );
 }
-
